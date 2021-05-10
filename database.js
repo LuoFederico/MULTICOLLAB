@@ -50,7 +50,17 @@ app.get('/', function (req, res) {
         });
     });
 });
+ function fetchData(response){
+executeQuery("Select * from Table",function (result){
+  console.log(result):
+  response.write('<table><tr>');
+  for(var column in result[0]){
+      response.write('<td><laberl>'+column+'</label></td')
+   }
+} 
+}
 
 var server = app.listen(5000, function () {
+   
     console.log('Server is running..');
 });
