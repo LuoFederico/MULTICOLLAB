@@ -25,10 +25,10 @@ app.get('/', function (req, res) {
 
     // config for your database
     var config = {
-        user: 'sa',
-        password: 'mypassword',
-        server: 'localhost', 
-        database: 'SchoolDB' 
+        user: 'LUO.HANG',
+        password: 'SSSSNN5N+',
+        server: '213.140.22.237\\SQLEXPRESS', 
+        database: 'LUO.HANG', 
     };
 
     // connect to your database
@@ -40,7 +40,7 @@ app.get('/', function (req, res) {
         var request = new sql.Request();
            
         // query to the database and get the records
-        request.query('select * from Student', function (err, recordset) {
+        request.query('select * from Multicollab_DB', function (err, recordset) {
             
             if (err) console.log(err)
 
@@ -50,16 +50,17 @@ app.get('/', function (req, res) {
         });
     });
 });
+/*
  function fetchData(response){
 executeQuery("Select * from Table",function (result){
-  console.log(result):
+  console.log(result);
   response.write('<table><tr>');
   for(var column in result[0]){
       response.write('<td><laberl>'+column+'</label></td')
    }
 } 
-}
-
+} 
+*/
 var server = app.listen(5000, function () {
    
     console.log('Server is running..');
