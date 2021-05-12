@@ -1,13 +1,13 @@
 /*
 var mysql = require('mysql');
-
+ 
 var con = mysql.createConnection({
   host: "localhost",
   user: "yourusername",
   password: "yourpassword",
   database: "mydb"
 });
-
+ 
 con.connect(function(err) {
   if (err) throw err;
   con.query("SELECT * FROM customers", function (err, result, fields) {
@@ -18,24 +18,24 @@ con.connect(function(err) {
 */
 var express = require('express');
 var app = express();
-
+ 
 app.get('/', function (req, res) {
    
     var sql = require("mssql");
-
+ 
     // config for your database
     var config = {
         user: 'MARASIGAN.JOSHUA',
         password: 'AWWWWR6R+',
-        server: '213.140.22.237', 
+        server: '213.140.22.237\\SQLEXPRESS', 
         database: 'MARASIGAN.JOSHUA', 
     };
-
+ 
     // connect to your database
     sql.connect(config, function (err) {
     
         if (err) console.log(err);
-
+ 
         // create Request object
         var request = new sql.Request();
            
@@ -43,9 +43,9 @@ app.get('/', function (req, res) {
         request.query('select * from Azienda', function (err, recordset) {
             
             if (err) console.log(err)
-
+ 
             // send records as a response
-            console.log(res.send(recordset));
+            console.log(recordset);
             
         });
     });
@@ -65,3 +65,4 @@ var server = app.listen(5000, function () {
    
     console.log('Server is running..');
 });
+ 
