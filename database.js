@@ -25,10 +25,10 @@ app.get('/', function (req, res) {
 
     // config for your database
     var config = {
-        user: 'LUO.HANG',
-        password: 'SSSSNN5N+',
-        server: '213.140.22.237\\SQLEXPRESS', 
-        database: 'LUO.HANG', 
+        user: 'MARASIGAN.JOSHUA',
+        password: 'AWWWWR6R+',
+        server: '213.140.22.237', 
+        database: 'MARASIGAN.JOSHUA', 
     };
 
     // connect to your database
@@ -40,12 +40,12 @@ app.get('/', function (req, res) {
         var request = new sql.Request();
            
         // query to the database and get the records
-        request.query('select * from Multicollab_DB', function (err, recordset) {
+        request.query('select * from Azienda', function (err, recordset) {
             
             if (err) console.log(err)
 
             // send records as a response
-            res.send(recordset);
+            console.log(res.send(recordset));
             
         });
     });
